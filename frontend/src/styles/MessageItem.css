@@ -1,0 +1,84 @@
+.message-item {
+  display: flex;
+  margin-bottom: 10px;
+  animation: messageAppear 0.3s ease-out;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-item.own-message {
+  justify-content: flex-end;
+}
+
+.message-item.other-message {
+  justify-content: flex-start;
+}
+
+.message-content {
+  max-width: 60%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #e0e0e0;
+  color: #333;
+}
+
+.message-item.own-message .message-content {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message-item.other-message .message-content {
+  background: #e0e0e0;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  gap: 10px;
+}
+
+.message-username {
+  font-weight: 600;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.message-time {
+  font-size: 11px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.message-text {
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 4px 0;
+}
+
+.message-status {
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 4px;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .message-content {
+    max-width: 80%;
+  }
+}
